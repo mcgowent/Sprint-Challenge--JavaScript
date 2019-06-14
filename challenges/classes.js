@@ -20,11 +20,36 @@ class CuboidMaker {
     }
 }
 
+class CubeMaker extends CuboidMaker {
+    constructor(attr) {
+        super(attr)
+
+    }
+    volumeCube() {
+        return this.length * this.width * this.height
+    }
+
+    surfaceAreaCube() {
+        return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
+    }
+
+}
+
 const cuboid = new CuboidMaker({
     length: 4,
     width: 5,
     height: 5
 })
 
+const cuboid_2 = new CubeMaker({
+    length: 4,
+    width: 5,
+    height: 5
+})
+
+
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
+
+console.log(cuboid_2.volumeCube()); // 100
+console.log(cuboid_2.surfaceAreaCube()); // 130
